@@ -1,0 +1,16 @@
+{
+  "name": "goal-manager-app",
+  "version": "1.0.0",
+  "description": "Local Goal Management App with adaptive tracking and beautiful UI",
+  "main": "index.js",
+  "author": "Goal Manager Team",
+  "license": "MIT",
+  "dependencies": {
+    "slice-ansi": "^7.1.2"
+  },
+  "devDependencies": {
+    "@electron/rebuild": "^3.7.2",
+    "electron": "^39.1.2",
+    "electron-builder": "^26.0.12"
+  }
+}
