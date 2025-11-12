@@ -1,274 +1,545 @@
-# 🎯 Goal Manager - Desktop App# 🎯 Goal Manager - Local Productivity App
+# Goal Manager - Desktop App# 🎯 Goal Manager - Desktop App# 🎯 Goal Manager - Local Productivity App
 
 
 
-A beautiful and powerful **standalone macOS desktop application** for managing your goals with adaptive tracking, intelligent carryover, and comprehensive analytics.A beautiful, feature-rich goal management application that runs completely locally on your Mac. Track daily, weekly, and monthly goals with adaptive carryover logic, streak tracking, and comprehensive analytics - all while keeping your data private and secure on your device.
+A beautiful and powerful **standalone macOS desktop application** for managing your goals with adaptive tracking, intelligent carryover, and comprehensive analytics.
 
 
 
-![License](https://img.shields.io/badge/license-MIT-blue.svg)## ✨ Features
+![License](https://img.shields.io/badge/license-MIT-blue.svg)A beautiful and powerful **standalone macOS desktop application** for managing your goals with adaptive tracking, intelligent carryover, and comprehensive analytics.A beautiful, feature-rich goal management application that runs completely locally on your Mac. Track daily, weekly, and monthly goals with adaptive carryover logic, streak tracking, and comprehensive analytics - all while keeping your data private and secure on your device.
 
 ![Platform](https://img.shields.io/badge/platform-macOS-lightgrey.svg)
 
-![Node](https://img.shields.io/badge/node-%3E%3D16-brightgreen.svg)- **🎯 Flexible Goal Setting**: Create daily, weekly, and monthly goals with custom categories
+![Node](https://img.shields.io/badge/node-%3E%3D16-brightgreen.svg)
 
-- **🔥 Adaptive Carryover**: Unfinished goals intelligently carry over with adjustable multipliers  
 
-## ✨ Features- **📊 Rich Analytics**: Beautiful charts, heatmaps, and progress visualization
+
+## Features![License](https://img.shields.io/badge/license-MIT-blue.svg)## ✨ Features
+
+
+
+- **Smart Goal Tracking** - Track daily, weekly, and monthly goals![Platform](https://img.shields.io/badge/platform-macOS-lightgrey.svg)
+
+- **Intelligent Carryover** - Automatically carries over incomplete goals with multipliers
+
+- **Beautiful Analytics** - Detailed charts and progress visualization![Node](https://img.shields.io/badge/node-%3E%3D16-brightgreen.svg)- **🎯 Flexible Goal Setting**: Create daily, weekly, and monthly goals with custom categories
+
+- **Local-First** - All data stored locally in SQLite
+
+- **Native macOS App** - Runs independently, no browser needed- **🔥 Adaptive Carryover**: Unfinished goals intelligently carry over with adjustable multipliers  
+
+- **Modern UI** - Beautiful interface with Tailwind CSS and Framer Motion
+
+- **Real-time Updates** - Live sync across all views with React Context## ✨ Features- **📊 Rich Analytics**: Beautiful charts, heatmaps, and progress visualization
+
+- **Background Service** - Automatic carryover processing at midnight
 
 - **🏆 Achievement System**: Earn badges and track streaks for motivation
 
+## Quick Start
+
 - 🎯 **Smart Goal Tracking** - Track daily, weekly, and monthly goals- **🔔 Smart Notifications**: Local reminders and celebration notifications
+
+### For Users (Run the App)
 
 - 🔄 **Intelligent Carryover** - Automatically carries over incomplete goals with multipliers- **🎨 Modern UI/UX**: Clean, responsive design with smooth animations
 
-- 📊 **Beautiful Analytics** - Detailed charts and progress visualization- **🔒 100% Local**: All data stays on your device using SQLite
+1. **Clone the repository**:
 
-- 💾 **Local-First** - All data stored locally in SQLite- **⚡ Auto-Start**: Configure to launch automatically at login
+   ```bash- 📊 **Beautiful Analytics** - Detailed charts and progress visualization- **🔒 100% Local**: All data stays on your device using SQLite
+
+   git clone <your-repo-url>
+
+   cd goal-manager- 💾 **Local-First** - All data stored locally in SQLite- **⚡ Auto-Start**: Configure to launch automatically at login
+
+   ```
 
 - 🖥️ **Native macOS App** - Runs independently, no browser needed
 
-- 🎨 **Modern UI** - Beautiful interface with Tailwind CSS and Framer Motion## 🚀 Quick Start
+2. **Build the app**:
 
-- ⚡ **Real-time Updates** - Live sync across all views with React Context
+   ```bash- 🎨 **Modern UI** - Beautiful interface with Tailwind CSS and Framer Motion## 🚀 Quick Start
 
-- 🌙 **Background Service** - Automatic carryover processing at midnight### Prerequisites
+   ./build-app.sh
 
-- Node.js 16+ installed
-
-## 🚀 Quick Start- macOS (optimized for Mac, but works on other platforms)
+   ```- ⚡ **Real-time Updates** - Live sync across all views with React Context
 
 
 
-### For Users (Run the App)### Installation
+3. **Open the app**:- 🌙 **Background Service** - Automatic carryover processing at midnight### Prerequisites
 
+   - Find it at `dist-electron/mac-arm64/Goal Manager.app`
 
-
-1. **Clone the repository**:1. **Clone or download the project**:
-
-   ```bash   ```bash
-
-   git clone <your-repo-url>   cd /Users/dhyeydesai/Desktop/Planner/goal-manager
-
-   cd goal-manager   ```
-
-   ```
-
-2. **Install all dependencies**:
-
-2. **Build the app**:   ```bash
-
-   ```bash   npm run setup
-
-   ./build-app.sh   ```
-
-   ```
-
-3. **Start the application**:
-
-3. **Open the app**:   ```bash
-
-   - Find it at `dist-electron/mac-arm64/Goal Manager.app`   npm run dev
-
-   - Or copy to Applications:   ```
+   - Or copy to Applications:- Node.js 16+ installed
 
      ```bash
 
-     cp -r "dist-electron/mac-arm64/Goal Manager.app" /Applications/4. **Open your browser** to `http://localhost:3000`
+     cp -r "dist-electron/mac-arm64/Goal Manager.app" /Applications/## 🚀 Quick Start- macOS (optimized for Mac, but works on other platforms)
 
      ```
 
-The backend will run on port 5000, frontend on port 3000, and the SQLite database will be created automatically.
+
 
 ### For Developers
 
-## 🛠 Manual Setup
+### For Users (Run the App)### Installation
 
 1. **Install dependencies**:
 
-   ```bashIf you prefer to set up manually:
+   ```bash
 
    npm install
 
-   cd backend && npm install && cd ..```bash
+   cd backend && npm install && cd ..1. **Clone the repository**:1. **Clone or download the project**:
 
-   cd frontend && npm install && cd ..# Install root dependencies
+   cd frontend && npm install && cd ..
 
-   ```npm install
+   ```   ```bash   ```bash
 
 
 
-2. **Development mode** (web version):# Install backend dependencies
+2. **Development mode** (web version):   git clone <your-repo-url>   cd /Users/dhyeydesai/Desktop/Planner/goal-manager
 
-   ```bashcd backend
+   ```bash
 
-   npm run devnpm install
+   npm run dev   cd goal-manager   ```
 
-   ```cd ..
+   ```
 
-   - Backend: http://localhost:5000
+   - Backend: http://localhost:5000   ```
 
-   - Frontend: http://localhost:5173# Install frontend dependencies  
+   - Frontend: http://localhost:5173
 
-cd frontend
+2. **Install all dependencies**:
 
-3. **Build desktop app**:npm install
+3. **Build desktop app**:
 
-   ```bashcd ..
+   ```bash2. **Build the app**:   ```bash
 
    npm run electron:build:mac
 
-   ```# Start both backend and frontend
-
-npm run dev
-
-## 🏗️ Tech Stack```
+   ```   ```bash   npm run setup
 
 
 
-### Frontend## 📱 Usage
+## Tech Stack   ./build-app.sh   ```
+
+
+
+### Frontend   ```
 
 - **React 18** - UI framework
 
-- **Vite** - Build tool and dev server### Creating Goals
+- **Vite** - Build tool and dev server3. **Start the application**:
 
-- **Tailwind CSS** - Styling1. Click **"New Goal"** on the dashboard
+- **Tailwind CSS** - Styling
 
-- **Framer Motion** - Animations2. Fill in title, description, and category
+- **Framer Motion** - Animations3. **Open the app**:   ```bash
 
-- **Headless UI** - Accessible components3. Choose goal type (daily, weekly, monthly)
+- **Headless UI** - Accessible components
 
-- **Lucide React** - Icons4. Set target value and priority
+- **Lucide React** - Icons   - Find it at `dist-electron/mac-arm64/Goal Manager.app`   npm run dev
 
-- **React Hot Toast** - Notifications5. Configure carryover settings for daily goals
+- **React Hot Toast** - Notifications
 
-- **Recharts** - Data visualization
+- **Recharts** - Data visualization   - Or copy to Applications:   ```
 
-### Tracking Progress
 
-### Backend- Use the **Dashboard** to see today's goals
 
-- **Node.js** - Runtime- Click **"Add Progress"** on any goal card
+### Backend     ```bash
 
-- **Express** - Web framework- Adjust the value and click to update
+- **Node.js** - Runtime
 
-- **SQLite3** - Database- Watch your streaks grow and achievements unlock!
+- **Express** - Web framework     cp -r "dist-electron/mac-arm64/Goal Manager.app" /Applications/4. **Open your browser** to `http://localhost:3000`
 
-- **node-cron** - Task scheduling
+- **SQLite3** - Database
 
-### Analytics & Insights
+- **node-cron** - Task scheduling     ```
 
-### Desktop- Visit the **Analytics** page for detailed insights
 
-- **Electron 39** - Desktop app framework- View completion rates, streak charts, and heatmaps
 
-- **electron-builder** - App packaging- Export your data anytime as CSV files
+### DesktopThe backend will run on port 5000, frontend on port 3000, and the SQLite database will be created automatically.
 
-- Track performance across categories
+- **Electron 39** - Desktop app framework
 
-## 📁 Project Structure
+- **electron-builder** - App packaging### For Developers
 
-## 🔧 Auto-Start Configuration
 
-```
 
-goal-manager/To make Goal Manager launch automatically when you start your Mac:
+## Project Structure## 🛠 Manual Setup
 
-├── backend/              # Express backend
 
-│   ├── database.js      # SQLite database setup1. **Open System Settings** → **General** → **Login Items**
 
-│   ├── server.js        # Express server2. Click the **"+"** button under "Open at Login"  
+```1. **Install dependencies**:
 
-│   ├── routes/          # API endpoints3. Navigate to the Goal Manager application
+goal-manager/
 
-│   │   ├── goals.js4. Select it to add to login items
+├── backend/              # Express backend   ```bashIf you prefer to set up manually:
+
+│   ├── database.js      # SQLite database setup
+
+│   ├── server.js        # Express server   npm install
+
+│   ├── routes/          # API endpoints
+
+│   │   ├── goals.js   cd backend && npm install && cd ..```bash
 
 │   │   ├── categories.js
 
-│   │   ├── analytics.jsThe app will now start automatically and can run in the background.
+│   │   ├── analytics.js   cd frontend && npm install && cd ..# Install root dependencies
 
 │   │   └── users.js
 
-│   └── services/        # Background services## 📁 Project Structure
+│   └── services/        # Background services   ```npm install
 
 │       ├── carryover.js
 
-│       └── notifications.js```
+│       └── notifications.js
 
-├── frontend/            # React frontendgoal-manager/
+├── frontend/            # React frontend
 
-│   ├── src/├── backend/          # Node.js/Express API server
+│   ├── src/2. **Development mode** (web version):# Install backend dependencies
 
-│   │   ├── components/  # React components│   ├── database.js   # SQLite database setup
+│   │   ├── components/  # React components
 
-│   │   ├── contexts/    # React Context (global state)│   ├── server.js     # Main server file
+│   │   ├── contexts/    # React Context (global state)   ```bashcd backend
 
-│   │   ├── pages/       # Page components│   ├── routes/       # API route handlers
+│   │   ├── pages/       # Page components
 
-│   │   ├── hooks/       # Custom hooks│   └── services/     # Background services
+│   │   ├── hooks/       # Custom hooks   npm run devnpm install
 
-│   │   └── services/    # API services├── frontend/         # React application
+│   │   └── services/    # API services
 
-│   └── dist/            # Built frontend (gitignored)│   ├── src/
+│   └── dist/            # Built frontend (gitignored)   ```cd ..
 
-├── build/               # Electron build scripts│   │   ├── components/  # Reusable UI components
+├── build/               # Electron build scripts
 
-├── assets/              # App icons and assets│   │   ├── pages/       # Page components
+├── assets/              # App icons and assets   - Backend: http://localhost:5000
 
-├── index.js             # Electron main process│   │   ├── hooks/       # Custom React hooks
+├── index.js             # Electron main process
 
-├── preload.js           # Electron preload script│   │   └── services/    # API client
+├── preload.js           # Electron preload script   - Frontend: http://localhost:5173# Install frontend dependencies  
 
-├── electron-builder.json # Build configuration│   └── public/
+├── electron-builder.json # Build configuration
 
-└── build-app.sh         # Build script└── package.json      # Main project configuration
-
-``````
-
-
-
-## 🎯 Key Features## 💾 Data Storage
-
-
-
-### Smart Carryover SystemAll data is stored locally in an SQLite database (`backend/goal_manager.db`). Your information includes:
-
-The app automatically processes incomplete goals at midnight:
-
-- Applies a **multiplier** (default 1.1x) to incomplete goals- Goals and categories
-
-- Respects **maximum caps** to prevent unrealistic targets- Daily progress tracking
-
-- Creates new goal instances for the next period- Achievement history  
-
-- Prevents goal accumulation through intelligent tracking- User settings and preferences
-
-
-
-### Global State Management**No data ever leaves your device** - complete privacy guaranteed!
-
-Uses React Context API for seamless data sync:
-
-- Single source of truth for all goals## 🎨 Customization
-
-- Real-time updates across Dashboard and Goals pages
-
-- Automatic refresh after create/edit/delete operations### Categories
-
-- No prop drilling - clean component architectureCreate custom categories with:
-
-- Custom names and descriptions
-
-### Data Persistence- Color coding for visual organization
-
-All data stored in SQLite at:- Emoji icons for personality
+└── build-app.sh         # Build scriptcd frontend
 
 ```
 
-~/Library/Application Support/goal-manager-app/goal_manager.db### Goal Types
+3. **Build desktop app**:npm install
 
-```- **Daily**: Repeat every day with carryover logic
+## Key Features
+
+   ```bashcd ..
+
+### Smart Carryover System
+
+The app automatically processes incomplete goals at midnight:   npm run electron:build:mac
+
+- Applies a **multiplier** (default 1.1x) to incomplete goals
+
+- Respects **maximum caps** to prevent unrealistic targets   ```# Start both backend and frontend
+
+- Creates new goal instances for the next period
+
+- Prevents goal accumulation through intelligent trackingnpm run dev
+
+
+
+### Global State Management## 🏗️ Tech Stack```
+
+Uses React Context API for seamless data sync:
+
+- Single source of truth for all goals
+
+- Real-time updates across Dashboard and Goals pages
+
+- Automatic refresh after create/edit/delete operations### Frontend## 📱 Usage
+
+- No prop drilling - clean component architecture
+
+- **React 18** - UI framework
+
+### Data Persistence
+
+All data stored in SQLite at:- **Vite** - Build tool and dev server### Creating Goals
+
+```
+
+~/Library/Application Support/goal-manager-app/goal_manager.db- **Tailwind CSS** - Styling1. Click **"New Goal"** on the dashboard
+
+```
+
+- Persists between app restarts- **Framer Motion** - Animations2. Fill in title, description, and category
+
+- Survives system reboots
+
+- Easy to backup- **Headless UI** - Accessible components3. Choose goal type (daily, weekly, monthly)
+
+
+
+## Development- **Lucide React** - Icons4. Set target value and priority
+
+
+
+### Available Scripts- **React Hot Toast** - Notifications5. Configure carryover settings for daily goals
+
+
+
+```bash- **Recharts** - Data visualization
+
+# Development (web mode)
+
+npm run dev                 # Start backend + frontend### Tracking Progress
+
+npm run dev:backend        # Backend only
+
+npm run dev:frontend       # Frontend only### Backend- Use the **Dashboard** to see today's goals
+
+
+
+# Building- **Node.js** - Runtime- Click **"Add Progress"** on any goal card
+
+npm run build              # Build frontend for production
+
+npm run electron:build:mac # Build macOS app- **Express** - Web framework- Adjust the value and click to update
+
+./build-app.sh             # Complete build script
+
+- **SQLite3** - Database- Watch your streaks grow and achievements unlock!
+
+# Production
+
+npm start                  # Start production backend- **node-cron** - Task scheduling
+
+```
+
+### Analytics & Insights
+
+### Building the Desktop App
+
+### Desktop- Visit the **Analytics** page for detailed insights
+
+The desktop app bundles everything:
+
+1. Frontend (built and bundled)- **Electron 39** - Desktop app framework- View completion rates, streak charts, and heatmaps
+
+2. Backend server (included with dependencies)
+
+3. SQLite database (created on first run)- **electron-builder** - App packaging- Export your data anytime as CSV files
+
+4. Electron wrapper (native macOS app)
+
+- Track performance across categories
+
+```bash
+
+# Complete build process## 📁 Project Structure
+
+./build-app.sh
+
+## 🔧 Auto-Start Configuration
+
+# Manual build steps
+
+cd frontend && npm run build && cd ..```
+
+npx electron-builder --mac --arm64
+
+```goal-manager/To make Goal Manager launch automatically when you start your Mac:
+
+
+
+## API Endpoints├── backend/              # Express backend
+
+
+
+### Goals│   ├── database.js      # SQLite database setup1. **Open System Settings** → **General** → **Login Items**
+
+- `GET /api/goals` - Get all goals with today's progress
+
+- `GET /api/goals/:id` - Get single goal details│   ├── server.js        # Express server2. Click the **"+"** button under "Open at Login"  
+
+- `POST /api/goals` - Create new goal
+
+- `PUT /api/goals/:id` - Update goal│   ├── routes/          # API endpoints3. Navigate to the Goal Manager application
+
+- `DELETE /api/goals/:id` - Delete goal
+
+│   │   ├── goals.js4. Select it to add to login items
+
+### Goal Progress
+
+- `POST /api/goals/:id/progress` - Update daily progress│   │   ├── categories.js
+
+- `GET /api/goals/today` - Get today's goal instances
+
+│   │   ├── analytics.jsThe app will now start automatically and can run in the background.
+
+### Categories
+
+- `GET /api/categories` - Get all categories│   │   └── users.js
+
+- `POST /api/categories` - Create category
+
+│   └── services/        # Background services## 📁 Project Structure
+
+### Analytics
+
+- `GET /api/analytics/summary` - Overall statistics│       ├── carryover.js
+
+- `GET /api/analytics/trends` - Progress trends over time
+
+│       └── notifications.js```
+
+## Database Schema
+
+├── frontend/            # React frontendgoal-manager/
+
+```sql
+
+-- Main goals table│   ├── src/├── backend/          # Node.js/Express API server
+
+goals (
+
+  id INTEGER PRIMARY KEY,│   │   ├── components/  # React components│   ├── database.js   # SQLite database setup
+
+  title TEXT NOT NULL,
+
+  description TEXT,│   │   ├── contexts/    # React Context (global state)│   ├── server.js     # Main server file
+
+  category_id INTEGER,
+
+  type TEXT CHECK(type IN ('daily', 'weekly', 'monthly')),│   │   ├── pages/       # Page components│   ├── routes/       # API route handlers
+
+  target_value INTEGER DEFAULT 1,
+
+  priority TEXT CHECK(priority IN ('low', 'medium', 'high')),│   │   ├── hooks/       # Custom hooks│   └── services/     # Background services
+
+  is_active BOOLEAN DEFAULT 1,
+
+  carryover_multiplier REAL DEFAULT 1.1,│   │   └── services/    # API services├── frontend/         # React application
+
+  max_carryover_cap INTEGER DEFAULT 5,
+
+  created_at DATETIME DEFAULT CURRENT_TIMESTAMP│   └── dist/            # Built frontend (gitignored)│   ├── src/
+
+)
+
+├── build/               # Electron build scripts│   │   ├── components/  # Reusable UI components
+
+-- Daily tracking
+
+goal_instances (├── assets/              # App icons and assets│   │   ├── pages/       # Page components
+
+  id INTEGER PRIMARY KEY,
+
+  goal_id INTEGER,├── index.js             # Electron main process│   │   ├── hooks/       # Custom React hooks
+
+  date DATE NOT NULL,
+
+  target_value INTEGER,├── preload.js           # Electron preload script│   │   └── services/    # API client
+
+  current_value INTEGER DEFAULT 0,
+
+  is_completed BOOLEAN DEFAULT 0,├── electron-builder.json # Build configuration│   └── public/
+
+  is_carried_over BOOLEAN DEFAULT 0,
+
+  previous_target INTEGER└── build-app.sh         # Build script└── package.json      # Main project configuration
+
+)
+
+``````
+
+-- Categories
+
+categories (
+
+  id INTEGER PRIMARY KEY,
+
+  name TEXT UNIQUE NOT NULL,## 🎯 Key Features## 💾 Data Storage
+
+  color TEXT,
+
+  icon TEXT
+
+)
+
+```### Smart Carryover SystemAll data is stored locally in an SQLite database (`backend/goal_manager.db`). Your information includes:
+
+
+
+## DistributionThe app automatically processes incomplete goals at midnight:
+
+
+
+After building, you get:- Applies a **multiplier** (default 1.1x) to incomplete goals- Goals and categories
+
+- `dist-electron/mac-arm64/Goal Manager.app` - The app bundle (arm64/Apple Silicon)
+
+- Ready to copy to `/Applications` folder- Respects **maximum caps** to prevent unrealistic targets- Daily progress tracking
+
+- Can be distributed as-is (no installer needed for testing)
+
+- Creates new goal instances for the next period- Achievement history  
+
+For production distribution:
+
+- Consider code signing with Apple Developer certificate- Prevents goal accumulation through intelligent tracking- User settings and preferences
+
+- Create DMG installer by changing target in `electron-builder.json`
+
+- Notarize the app for Gatekeeper
+
+
+
+## Contributing### Global State Management**No data ever leaves your device** - complete privacy guaranteed!
+
+
+
+1. Fork the repositoryUses React Context API for seamless data sync:
+
+2. Create your feature branch: `git checkout -b feature/amazing-feature`
+
+3. Commit your changes: `git commit -m 'Add amazing feature'`- Single source of truth for all goals## 🎨 Customization
+
+4. Push to the branch: `git push origin feature/amazing-feature`
+
+5. Open a Pull Request- Real-time updates across Dashboard and Goals pages
+
+
+
+## License- Automatic refresh after create/edit/delete operations### Categories
+
+
+
+MIT License - feel free to use this project for personal or commercial purposes.- No prop drilling - clean component architectureCreate custom categories with:
+
+
+
+## Acknowledgments- Custom names and descriptions
+
+
+
+- Built with React, Node.js, and Electron### Data Persistence- Color coding for visual organization
+
+- Icons by [Lucide](https://lucide.dev/)
+
+- UI components from [Headless UI](https://headlessui.com/)All data stored in SQLite at:- Emoji icons for personality
+
+- Charts powered by [Recharts](https://recharts.org/)
+
+- Date utilities from [date-fns](https://date-fns.org/)```
+
+
+
+---~/Library/Application Support/goal-manager-app/goal_manager.db### Goal Types
+
+
+
+**Made for productivity enthusiasts**```- **Daily**: Repeat every day with carryover logic
+
 
 - Persists between app restarts- **Weekly**: Track weekly objectives  
 
