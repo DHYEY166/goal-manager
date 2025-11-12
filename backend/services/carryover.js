@@ -72,7 +72,7 @@ class CarryoverService {
         // Break streak for incomplete goals
         await this.db.run(`
           UPDATE goals 
-          SET streak_count = 0, updated_at = CURRENT_TIMESTAMP
+          SET streak_count = 0, updated_at = datetime('now','localtime')
           WHERE id = ?
         `, [instance.goal_id]);
 

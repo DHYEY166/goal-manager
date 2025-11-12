@@ -69,11 +69,13 @@ router.post('/', async (req, res) => {
       return res.status(400).json({ error: 'Title and type are required' });
     }
 
+    const now = new Date().toLocaleString('en-US', { timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone });
+    
     const result = await req.db.run(`
       INSERT INTO goals (
         title, description, category_id, type, target_type, target_value,
-        is_recurring, priority, carryover_multiplier, max_carryover_cap, updated_at
-      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP)
+        is_recurring, priority, carryover_multiplier, max_carryover_cap, created_at, updated_at
+      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, datetime('now', 'localtime'), datetime('now', 'localtime'))
     `, [
       title, description, category_id, type, target_type, target_value,
       is_recurring, priority, carryover_multiplier, max_carryover_cap
@@ -140,9 +142,9 @@ router.post('/:goalId/progress', async (req, res) => {
 
     await req.db.run(`
       UPDATE goal_instances 
-      SET current_value = ?, is_completed = ?, completed_at = ?
+      SET current_value = ?, is_completed = ?, completed_at = CASE WHEN ? THEN datetime('now', 'localtime') ELSE NULL END
       WHERE id = ?
-    `, [newCurrentValue, isCompleted, isCompleted ? new Date().toISOString() : null, instance.id]);
+    `, [newCurrentValue, isCompleted, isCompleted, instance.id]);
 
     // Update goal stats if completed
     if (isCompleted && !instance.is_completed) {
@@ -153,7 +155,7 @@ router.post('/:goalId/progress', async (req, res) => {
 
       await req.db.run(`
         UPDATE goals 
-        SET streak_count = ?, longest_streak = ?, total_completions = ?, updated_at = CURRENT_TIMESTAMP
+        SET streak_count = ?, longest_streak = ?, total_completions = ?, updated_at = datetime('now', 'localtime')
         WHERE id = ?
       `, [newStreakCount, newLongestStreak, newTotalCompletions, goalId]);
 
@@ -211,7 +213,7 @@ router.put('/:id', async (req, res) => {
       UPDATE goals 
       SET title = ?, description = ?, category_id = ?, target_value = ?, 
           priority = ?, is_active = ?, carryover_multiplier = ?, 
-          max_carryover_cap = ?, updated_at = CURRENT_TIMESTAMP
+          max_carryover_cap = ?, updated_at = datetime('now', 'localtime')
       WHERE id = ?
     `, [title, description, category_id, target_value, priority, is_active, carryover_multiplier, max_carryover_cap, id]);
 

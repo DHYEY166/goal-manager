@@ -21,7 +21,7 @@ class Database {
           id INTEGER PRIMARY KEY AUTOINCREMENT,
           username TEXT UNIQUE DEFAULT 'default_user',
           settings TEXT DEFAULT '{}',
-          created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+          created_at DATETIME DEFAULT (datetime('now', 'localtime'))
         )
       `);
 
@@ -32,7 +32,7 @@ class Database {
           name TEXT UNIQUE NOT NULL,
           color TEXT DEFAULT '#3B82F6',
           icon TEXT DEFAULT '🎯',
-          created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+          created_at DATETIME DEFAULT (datetime('now', 'localtime'))
         )
       `);
 
@@ -55,8 +55,8 @@ class Database {
           total_completions INTEGER DEFAULT 0,
           carryover_multiplier REAL DEFAULT 1.1,
           max_carryover_cap INTEGER DEFAULT 5,
-          created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-          updated_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+          created_at DATETIME DEFAULT (datetime('now', 'localtime')),
+          updated_at DATETIME DEFAULT (datetime('now', 'localtime')),
           FOREIGN KEY (category_id) REFERENCES categories (id)
         )
       `);
@@ -73,7 +73,7 @@ class Database {
           carried_over_from DATE,
           notes TEXT,
           completed_at DATETIME,
-          created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+          created_at DATETIME DEFAULT (datetime('now', 'localtime')),
           FOREIGN KEY (goal_id) REFERENCES goals (id),
           UNIQUE(goal_id, date)
         )
@@ -86,7 +86,7 @@ class Database {
           goal_instance_id INTEGER NOT NULL,
           value_added INTEGER NOT NULL,
           notes TEXT,
-          timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,
+          timestamp DATETIME DEFAULT (datetime('now', 'localtime')),
           FOREIGN KEY (goal_instance_id) REFERENCES goal_instances (id)
         )
       `);
@@ -99,7 +99,7 @@ class Database {
           type TEXT NOT NULL,
           title TEXT NOT NULL,
           description TEXT,
-          achieved_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+          achieved_at DATETIME DEFAULT (datetime('now', 'localtime')),
           FOREIGN KEY (goal_id) REFERENCES goals (id)
         )
       `);
